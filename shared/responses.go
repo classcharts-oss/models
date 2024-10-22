@@ -71,3 +71,11 @@ func NewErrorfulResponse(message string) ErrorfulResponse[[]any] {
 		Meta:    []any{},
 	}
 }
+
+func NewExpiredResponse(message string) ErrorfulResponse[[]any] {
+	return ErrorfulResponse[[]any]{
+		Success: 0,
+		Error:   message,
+		Expired: 1,
+	}
+}

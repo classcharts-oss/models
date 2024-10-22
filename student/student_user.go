@@ -50,8 +50,8 @@ type DBStudentUser struct {
 
 	SchoolId int `json:"school_id"`
 
-	Code string `json:"code"`
-	DOB  string `json:"dob"`
+	Code string  `json:"code"`
+	DOB  *string `json:"dob"`
 
 	Concerns []string `json:"concerns"`
 
