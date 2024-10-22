@@ -1,6 +1,8 @@
 package student
 
-import "strings"
+import (
+	"strings"
+)
 
 type StudentUser struct {
 	Id                           int     `json:"id"`
@@ -44,12 +46,16 @@ type StudentUser struct {
 }
 
 type DBStudentUser struct {
-	StudentUser StudentUser
+	StudentUser
+
+	SchoolId int `json:"school_id"`
 
 	Code string `json:"code"`
 	DOB  string `json:"dob"`
 
 	Concerns []string `json:"concerns"`
+
+	//SessionToken string `json:"session_token"`
 }
 
 func NewUser(id int, name string, avatarUrl string) StudentUser {
