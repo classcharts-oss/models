@@ -13,13 +13,14 @@ type School struct {
 	Announcements []shared.Announcement `json:"announcements"` // The announcements in the school.
 }
 
-func NewSchool(id int, name, logo string, classes []Class) School {
+func NewSchool(id int, name, logo string) School {
 	return School{
 		Id:   id,
 		Name: name,
 
 		Logo: logo,
 
-		Classes: classes,
+		Classes:       []Class{},
+		Announcements: []shared.Announcement{},
 	}
 }
