@@ -1,6 +1,6 @@
 package main
 
-import "github.com/CommunityCharts/CCModelsGo/student"
+import "github.com/CommunityCharts/CCModels/student"
 
 func main() {
 	student.NewUser()
