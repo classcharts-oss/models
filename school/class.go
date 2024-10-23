@@ -6,6 +6,8 @@ type Class struct {
 
 	Name    string `json:"short_name"`  // The short name of the class. (e.g. "10C/En1" for Year 10, Band C, English, Set 1)
 	Subject string `json:"lesson_name"` // The subject taught in this class. (e.g. "English" or "Maths")
+
+	Students []int `json:"students"`
 }
 
 // NewClass creates a new class.
@@ -15,5 +17,7 @@ func NewClass(id int, name, subject string) Class {
 
 		Name:    name,
 		Subject: subject,
+
+		Students: []int{},
 	}
 }

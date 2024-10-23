@@ -30,9 +30,11 @@ type Announcement struct {
 }
 
 type AnnouncementAttachment struct {
-	Id       int    `json:"id"`
-	Filename string `json:"filename"`
-	Url      string `json:"url"`
+	Id                int                  `json:"id"`
+	Filename          string               `json:"filename"`
+	Url               string               `json:"url"`
+	ScanStatus        AttachmentScanStatus `json:"scan_status"`
+	ScanStatusMessage string               `json:"scan_status_message"`
 }
 
 type Consent struct {
