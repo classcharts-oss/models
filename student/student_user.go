@@ -1,6 +1,7 @@
 package student
 
 import (
+	"github.com/CommunityCharts/CCModels/shared"
 	"strings"
 )
 
@@ -53,9 +54,8 @@ type DBStudentUser struct {
 	Code string  `json:"code"`
 	DOB  *string `json:"dob"`
 
-	Concerns []string `json:"concerns"`
-
-	//SessionToken string `json:"session_token"`
+	Concerns   []string          `json:"concerns"`
+	Activities []shared.Activity `json:"activities"`
 }
 
 func NewUser(id int, name string, avatarUrl string) StudentUser {
@@ -66,7 +66,7 @@ func NewUser(id int, name string, avatarUrl string) StudentUser {
 		Name:                         name,
 		FirstName:                    nameParts[0],
 		LastName:                     nameParts[len(nameParts)-1],
-		AvatarURL:                    "https://example.com/avatar.jpg",
+		AvatarURL:                    avatarUrl,
 		DisplayBehaviour:             true,
 		DisplayParentBehaviour:       false,
 		DisplayHomework:              true,
@@ -101,4 +101,38 @@ func NewUser(id int, name string, avatarUrl string) StudentUser {
 		HasNewSurvey:                 false,
 		SurveyId:                     nil,
 	}
+}
+
+func (dbu *DBStudentUser) GetAllPositive() []shared.Activity {
+	var positive []shared.Activity
+
+	for _, a := range dbu.Activities {
+		if a.Polarity == "positive" {
+			positive = append(positive, a)
+		}
+	}
+
+	return positive
+}
+
+func (dbu *DBStudentUser) GetAllNegative() []shared.Activity {
+	var negative []shared.Activity
+
+	for _, a := range dbu.Activities {
+		if a.Polarity == "negative" {
+			negative = append(negative, a)
+		}
+	}
+
+	return negative
+}
+
+func (dbu *DBStudentUser) GetTotalScore() int {
+	total := 0
+
+	for _, a := range dbu.Activities {
+		total += a.Score
+	}
+
+	return total
 }

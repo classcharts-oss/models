@@ -16,7 +16,7 @@ type Announcement struct {
 
 	Attachments []AnnouncementAttachment `json:"attachments"`
 
-	CommentVisibility string `json:"comment_visibility"`
+	CommentVisibility string `json:"comment_visibility"` // public, private, none
 
 	AllowComments    YesNoBool `json:"allow_comments"`
 	AllowReactions   YesNoBool `json:"allow_reactions"`
