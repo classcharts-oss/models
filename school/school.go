@@ -1,6 +1,6 @@
 package school
 
-import "github.com/CommunityCharts/CCModels/shared"
+import "github.com/classcharts-oss/models/shared"
 
 // School represents a school, of course.
 type School struct {

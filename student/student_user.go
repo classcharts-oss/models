@@ -1,7 +1,7 @@
 package student
 
 import (
-	"github.com/CommunityCharts/CCModels/shared"
+	"github.com/classcharts-oss/models/shared"
 	"strings"
 )
 

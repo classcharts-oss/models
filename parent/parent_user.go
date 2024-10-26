@@ -1,8 +1,8 @@
 package parent
 
 import (
-	"github.com/CommunityCharts/CCModels/school"
-	"github.com/CommunityCharts/CCModels/student"
+	"github.com/classcharts-oss/models/school"
+	"github.com/classcharts-oss/models/student"
 )
 
 // ParentUser represents a parent.

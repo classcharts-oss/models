@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/CommunityCharts/CCModels/student"
+	"github.com/classcharts-oss/models/student"
 )
 
 func main() {
